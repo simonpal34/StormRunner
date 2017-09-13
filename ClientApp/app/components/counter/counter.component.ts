@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'counter',
+    selector: 'home',
     templateUrl: './counter.component.html'
 })
 export class CounterComponent {
