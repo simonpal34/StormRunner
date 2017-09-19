@@ -2,6 +2,11 @@
   "name": "angular4Template",
   "version": "0.0.0",
   "dependencies": {
+    "@agm/core": {
+      "version": "1.0.0-beta.1",
+      "from": "https://registry.npmjs.org/@agm/core/-/core-1.0.0-beta.1.tgz",
+      "resolved": "https://registry.npmjs.org/@agm/core/-/core-1.0.0-beta.1.tgz"
+    },
     "@angular/animations": {
       "version": "4.2.5",
       "from": "@angular/animations@4.2.5",
@@ -158,6 +163,11 @@
       "version": "1.0.1",
       "from": "amdefine@>=0.0.4",
       "resolved": "https://registry.npmjs.org/amdefine/-/amdefine-1.0.1.tgz"
+    },
+    "angular-google-map": {
+      "version": "0.0.2",
+      "from": "https://registry.npmjs.org/angular-google-map/-/angular-google-map-0.0.2.tgz",
+      "resolved": "https://registry.npmjs.org/angular-google-map/-/angular-google-map-0.0.2.tgz"
     },
     "angular2-template-loader": {
       "version": "0.6.2",

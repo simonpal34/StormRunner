@@ -4,17 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-import { CounterComponent } from './components/counter/counter.component';
+import { WeatherComponent } from './components/Weather/weather.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
+        WeatherComponent,
         FetchDataComponent,
         HomeComponent
     ],
@@ -23,11 +24,11 @@ import { CounterComponent } from './components/counter/counter.component';
         HttpModule,
         FormsModule,
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: '', redirectTo: 'weather', pathMatch: 'full' },
             { path: 'counter', component: HomeComponent },
-            { path: 'home', component: CounterComponent },
+            { path: 'weather', component: WeatherComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: '**', redirectTo: 'home' }
+            { path: '**', redirectTo: 'weather' }
         ])
     ]
 })
