@@ -6,6 +6,7 @@
     "test": "karma start ClientApp/test/karma.conf.js"
   },
   "dependencies": {
+    "@agm/core": "https://registry.npmjs.org/@agm/core/-/core-1.0.0-beta.1.tgz",
     "@angular/animations": "4.2.5",
     "@angular/common": "4.2.5",
     "@angular/compiler": "4.2.5",
@@ -18,7 +19,9 @@
     "@angular/platform-server": "4.2.5",
     "@angular/router": "4.2.5",
     "@ngtools/webpack": "1.5.0",
+    "@types/arcgis-js-api": "^4.4.0",
     "@types/webpack-env": "1.13.0",
+    "angular-google-map": "https://registry.npmjs.org/angular-google-map/-/angular-google-map-0.0.2.tgz",
     "angular2-template-loader": "0.6.2",
     "aspnet-prerendering": "^3.0.1",
     "aspnet-webpack": "^2.0.1",
@@ -31,6 +34,7 @@
     "expose-loader": "0.7.3",
     "extract-text-webpack-plugin": "2.1.2",
     "file-loader": "0.11.2",
+    "google-maps-angular2": "^1.1.2",
     "html-loader": "0.4.5",
     "isomorphic-fetch": "2.2.1",
     "jquery": "3.2.1",
@@ -59,5 +63,18 @@
     "karma-cli": "1.0.1",
     "karma-jasmine": "1.1.0",
     "karma-webpack": "2.0.3"
-  }
+  },
+  "description": "StormRunner",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonpal34/StormRunner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonpal34/StormRunner/issues"
+  },
+  "homepage": "https://github.com/simonpal34/StormRunner#readme"
 }

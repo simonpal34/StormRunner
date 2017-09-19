@@ -13,15 +13,16 @@
         <div class='navbar-collapse collapse' >
             <ul class='nav navbar-nav'>
                 <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/counter']">
-                        <span class='glyphicon glyphicon-cloud'></span> Weather
+                    <a [routerLink]="['/weather']">
+                        <span class='glyphicon glyphicon-map-marker'></span> Weather Data
                     </a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['/home']">
-                        <span class='glyphicon glyphicon-map-marker'></span> Upcoming Evacuation Route
+                    <a [routerLink]="['/counter']">
+                        <span class='glyphicon glyphicon-cloud'></span> Evacuation Route
                     </a>
                 </li>
+                
                 
             </ul>
         </div>
