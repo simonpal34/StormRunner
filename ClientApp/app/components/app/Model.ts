@@ -1,9 +1,9 @@
 ﻿export abstract class WeatherModel
 {
-    hours : Hourly[]
+    daily : Days[]
 }
 
-export abstract class Hourly
+export abstract class Days
 {
-
+    percipitationIntensityMax: number;
 }

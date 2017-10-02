@@ -11,13 +11,15 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { WeatherComponent } from './components/Weather/weather.component';
 
+
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
         WeatherComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+
     ],
     imports: [
         CommonModule,
