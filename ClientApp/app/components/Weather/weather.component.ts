@@ -9,13 +9,16 @@ import { Http } from '@angular/http';
 })
 export class WeatherComponent {
     svc: WeatherService;
+    forecast: WeatherModel[];
 
     constructor(http : Http){
         this.svc = new WeatherService(http);
     }
 
-    ngOnInit()
+    async ngOnInit()
     {
-        this.svc.getWeather();
+        await this.svc.getWeather().then(async response => {
+            this.forecast = await response
+        });
     }
 }
