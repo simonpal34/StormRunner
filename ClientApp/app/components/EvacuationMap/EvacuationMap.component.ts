@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { AngularEsriModule } from 'angular-esri-components';
 
 // also import the "angular2-esri-loader" to be able to load JSAPI modules
-import { EsriLoaderService } from 'angular2-esri-loader';
+import { EsriLoaderService} from 'angular2-esri-loader';
 
 @Component({
     selector: 'evac-map',
     templateUrl: './EvacuationMap.component.html',
-    styleUrls: ['./EvacuationMap.component.css']
+    styleUrls: ['./EvacuationMap.component.css'] 
 })
 export class EvacuationMapComponent implements OnInit {
 
@@ -29,13 +30,13 @@ export class EvacuationMapComponent implements OnInit {
             // load the needed Map and MapView modules from the JSAPI
             this.esriLoader.loadModules([
                 'esri/Map',
-                'esri/views/MapView'
+                'esri/views/MapView',
             ]).then(([
                 Map,
-                MapView
+                MapView,
             ]) => {
                 const mapProperties: any = {
-                    basemap: 'streets'
+                    basemap: 'streets',
                 };
 
                 const map: any = new Map(mapProperties);
