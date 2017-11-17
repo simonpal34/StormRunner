@@ -1,0 +1,15 @@
+<h1>
+    Weather Conditions
+
+
+
+    <h2>The current temp in oc md: {{this.forecast.currently.temperature}}</h2>
+
+
+    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+    <div class="row">
+        <div class="col-xs-6 col-md-4" *ngIf="weather">{{this.forecast.currently.temperature}}</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+</h1>

@@ -9,7 +9,8 @@ import { Http } from '@angular/http';
 })
 export class WeatherComponent {
     svc: WeatherService;
-    forecast: WeatherModel[];
+    forecast: WeatherModel;
+    weather:boolean;
 
     constructor(http : Http){
         this.svc = new WeatherService(http);
@@ -20,5 +21,12 @@ export class WeatherComponent {
         await this.svc.getWeather().then(async response => {
             this.forecast = await response
         });
+        this.weather = false;
+        console.log(this.forecast.currently.icon);
+        console.log(this.forecast.daily.data[1].precipType);
+        console.log(this.forecast.daily.data[1].precipIntensityMax);
+
     }
 }
+
+

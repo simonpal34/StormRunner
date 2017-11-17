@@ -1,14 +1,45 @@
 ﻿export abstract class WeatherModel
 {
-    daily : Days
+    daily: Days;
+    currently: currentData;
 }
 
 export abstract class Days
 {
-    data: DailyData[]
+    data: dailyData[];
 }
 
-export abstract class DailyData
+export abstract class currentData
 {
-    percipitationIntensityMax: number;
+    summary: string;
+    icon: string;
+    precipIntensity: number;
+    precipProbability: number;
+    temperature: number;
+    apparentTemperature: number;
+    humidity: number;
+    windSpeed: number;
+    windGust: number;
+    windBearing: number;
+    cloudCover: number;
+    uvIndex: number;
+    visibility: number;
 }
+
+export abstract class dailyData
+{
+    summary: string;
+    icon: string;
+    precipIntensity: number;
+    precipIntensityMax: number;
+    precipProbability: number;
+    precipType: string;
+    temperatureHigh: number;
+    temperatureLow: number;
+    windSpeed: number;
+    windGust: number;
+    windBearing: number;
+    cloudCover: number;
+    uvIndex: number;
+}
+

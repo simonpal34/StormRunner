@@ -12,14 +12,17 @@ export class WeatherService {
         this.http = http;
     }
 
-    public async getWeather(): Promise<WeatherModel[]> {
+
+    public async getWeather(): Promise<WeatherModel> {
 
         var headers = new Headers();
-
+        headers.append('Accept', 'application/json');
         headers.append('Content-Type', 'application/json');
+        headers.append('Access-Control-Allow-Origin', '*');
+
         let options = new RequestOptions({ headers: headers });
         return await this.http.get("https://api.darksky.net/forecast/2d451954e99d3db65a8dc448c4d37e0f/38.3365,-75.0849", options).toPromise()
-            .then(response => response.json() as WeatherModel[]);
+            .then(response => response.json() as WeatherModel);
 
 
     }
