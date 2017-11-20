@@ -10,7 +10,8 @@ import { Http } from '@angular/http';
 export class WeatherComponent {
     svc: WeatherService;
     forecast: WeatherModel;
-    weather:boolean;
+    weather: boolean;
+    weekday: string[]=[];
 
     constructor(http : Http){
         this.svc = new WeatherService(http);
@@ -21,10 +22,19 @@ export class WeatherComponent {
         await this.svc.getWeather().then(async response => {
             this.forecast = await response
         });
-        this.weather = false;
-        console.log(this.forecast.currently.icon);
-        console.log(this.forecast.daily.data[1].precipType);
-        console.log(this.forecast.daily.data[1].precipIntensityMax);
+
+        for(var i = 0; i < 5; i++) {
+            var Wday: string[] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var xx = new Date();
+            xx.setTime((this.forecast.daily.data[i].time)*1000);
+            this.weekday.push(Wday[xx.getDay()]);
+        }
+
+        for (var i = 0; i < 5; i++) {
+            console.log(this.weekday[i]);
+        }
+
+
 
     }
 }

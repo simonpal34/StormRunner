@@ -11,6 +11,7 @@ export abstract class Days
 
 export abstract class currentData
 {
+    time: number;
     summary: string;
     icon: string;
     precipIntensity: number;
@@ -28,6 +29,7 @@ export abstract class currentData
 
 export abstract class dailyData
 {
+    time: number;
     summary: string;
     icon: string;
     precipIntensity: number;
@@ -41,5 +43,6 @@ export abstract class dailyData
     windBearing: number;
     cloudCover: number;
     uvIndex: number;
+    visibility: number;
 }
 
