@@ -16,7 +16,7 @@
         /* Style the header */
         .header {
             background-color: #f1f1f1;
-            padding: 140px;
+            padding: 40px;
             text-align: center;
         }
 
@@ -53,9 +53,9 @@
 </head>
 <body>
     Weather Conditions for Ocean City
-    <div class="header" height="450">
+    <div class="header" height="50">
         <!-- <img src="real-fake-doors.jpg" height="300" width="400"/> -->
-        <h2>Radar image here maybe</h2>
+        <h2><iframe src="http://api.wunderground.com/api/251beb4e6bf98f60/animatedradar/q/MD/Ocean_City.gif?newmaps=1&num=12&delay=50&interval=30&width=1000&height=500&timelabel=1&timelabel.x=850&timelabel.y=793&rainsnow=1&radius=50" scrolling="NO" allowtransparency="false" sandbox="allow-same-origin allow-scripts allow-popups" style="height: 500px;width: 800px; overflow:visible " frameborder="0"></iframe></h2>
         <h3>ITS GONNA RAIN! </h3>
         <p>also add info from severe weather alearts api. found a few api calls for this but have not yet figured out how to narrow the results to ocean city</p>
     </div>

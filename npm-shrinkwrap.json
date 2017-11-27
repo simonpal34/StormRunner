@@ -253,8 +253,7 @@
       "requires": {
         "@angular/core": "4.2.5",
         "esri-loader": "1.5.2",
-        "rxjs": "5.4.2",
-        "zone.js": "0.8.12"
+        "rxjs": "5.4.2"
       }
     },
     "angular2-template-loader": {
@@ -6406,9 +6405,9 @@
       "dev": true
     },
     "zone.js": {
-      "version": "0.8.12",
-      "resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.8.12.tgz",
-      "integrity": "sha1-hv9QU8mK7CkaC/S7rFAdaUoFz7s="
+      "version": "0.8.17",
+      "resolved": "https://registry.npmjs.org/zone.js/-/zone.js-0.8.17.tgz",
+      "integrity": "sha1-TF5RhahX2o2nk9rzkZNxxaNrKgs="
     }
   }
 }
