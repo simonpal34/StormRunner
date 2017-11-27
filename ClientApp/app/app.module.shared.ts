@@ -11,7 +11,8 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { WeatherComponent } from './components/Weather/weather.component';
 import { WeatherService } from'./components/Services/WeatherService';
 import { EsriLoaderService } from 'angular2-esri-loader';
-import { EvacuationMapComponent } from './components/EvacuationMap/EvacuationMap.component';  
+import { InterestPointsComponent } from './components/InterestPoints/InterestPoints.component';
+import { EvacuationMapComponent } from './components/EvacuationMap/EvacuationMap.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { EvacuationMapComponent } from './components/EvacuationMap/EvacuationMap
         NavMenuComponent,
         WeatherComponent,
         FetchDataComponent,
+        InterestPointsComponent,
         EvacuationMapComponent,
 
     ],
@@ -28,9 +30,10 @@ import { EvacuationMapComponent } from './components/EvacuationMap/EvacuationMap
         FormsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'weather', pathMatch: 'full' },
-            { path: 'evac-map', component: EvacuationMapComponent },
+            { path: 'points_of_interest', component: InterestPointsComponent },
             { path: 'weather', component: WeatherComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'evac-map', component: EvacuationMapComponent },
             { path: '**', redirectTo: 'weather' }
         ])
     ],
