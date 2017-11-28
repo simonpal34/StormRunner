@@ -21,7 +21,7 @@ export class WeatherService {
         headers.append('Access-Control-Allow-Origin', '*');
 
         let options = new RequestOptions({ headers: headers });
-        return await this.http.get("https://api.darksky.net/forecast/2d451954e99d3db65a8dc448c4d37e0f/38.3365,-75.0849", options).toPromise()
+        return await this.http.get("https://api.darksky.net/forecast/2d451954e99d3db65a8dc448c4d37e0f/38.3365,-75.0849?units=us&lang=en&exclude=minutely,hourly,flags", options).toPromise()
             .then(response => response.json() as WeatherModel);
 
 
