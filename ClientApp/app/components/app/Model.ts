@@ -2,6 +2,7 @@
 {
     daily: Days;
     currently: currentData;
+    alerts: severeAlerts;
 }
 
 export abstract class Days
@@ -46,3 +47,4 @@ export abstract class dailyData
     visibility: number;
 }
 
+export abstract class severeAlerts {     title: string;     time: number;     expires: number;     description: string;     regions: string;     severity: string;     uri: string; }
