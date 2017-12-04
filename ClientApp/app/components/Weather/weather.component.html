@@ -57,10 +57,10 @@
 </head>
 <body>
     <div class="header" height="1">
+        <h2>Current Weather Conditions for Ocean City Maryland:</h2>
+        <h4 style="color:#2593C7">{{this.forecast.currently.summary}}, Chance of {{this.forecast.daily.data[0].precipType}}: {{this.precipProb[0]}}%, Temperature: {{this.forecast.currently.temperature}}&#x2109;, Wind: {{this.forecast.currently.windSpeed}}mph, Visibility: {{this.forecast.currently.visibility}}mi</h4>
         <!-- <img src="real-fake-doors.jpg" height="300" width="400"/> -->
-        <h2>
-            <iframe src="http://www.zoomforecast.com/zoomradar_weather_map/weather_image_user.php?key=xaTCXFA983YSvyb" width="700" height="600" style="border:0" frameBorder="0" seamless="seamless" scrolling="no" allowfullscreen="true"></iframe>
-        </h2>
+        <h2><iframe src="https://www.rainviewer.com/map.html?loc=38.695797,-77.879284,5.593611500958603&oFa=1&oC=1&oU=0&oCUB=1&oCS=1&oF=0&oAP=1&rmt=1" scrolling="NO" allowtransparency="false" sandbox="allow-same-origin allow-scripts allow-popups" style="height: 450px;width: 900px; overflow:visible " frameborder="0"></iframe></h2>
         <h3 style="color:red">Weather Alerts: <span class="name">{{this.caption}}</span></h3>
     </div>
     <div class="row">
