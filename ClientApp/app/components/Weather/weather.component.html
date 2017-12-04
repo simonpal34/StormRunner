@@ -5,70 +5,74 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        * {
-            box-sizing: border-box;
-        }
+    span.name { color:black }
+    * {
+        box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-        }
+    body {
+        margin: 0;
+    }
 
-        /* Style the header */
-        .header {
-            background-color: #f1f1f1;
-            padding: 40px;
-            text-align: center;
-        }
+    /* Style the header */
+    .header {
+        background-color: #f1f1f1;
+        padding: 5px;
+        text-align: center;
+    }
 
-        /* Create three equal columns that floats next to each other */
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+        height: 275px; /* Should be removed. Only for demonstration */
+        text-align: center;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Style the footer */
+    .footer {
+        background-color: #f1f1f1;
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media (max-width: 600px) {
         .column {
-            float: left;
-            width: 33.33%;
-            padding: 10px;
-            height: 300px; /* Should be removed. Only for demonstration */
-            text-align: center;
+            width: 100%;
         }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* Style the footer */
-        .footer {
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-        }
-
-        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-        @media (max-width: 600px) {
-            .column {
-                width: 100%;
-            }
-        }
+    }
     </style>
 </head>
 <body>
-    Weather Conditions for Ocean City
-    <div class="header" height="50">
+    <div class="header" height="1">
+        <h2>Current Weather Conditions for Ocean City Maryland:</h2>
+        <h4 style="color:#2593C7">{{this.forecast.currently.summary}}, Chance of {{this.forecast.daily.data[0].precipType}}: {{this.precipProb[0]}}%, Temperature: {{this.forecast.currently.temperature}}&#x2109;, 
+        Wind: {{this.forecast.currently.windSpeed}}mph, Visibility: {{this.forecast.currently.visibility}}mi</h4>
         <!-- <img src="real-fake-doors.jpg" height="300" width="400"/> -->
-        <h2><iframe src="http://api.wunderground.com/api/251beb4e6bf98f60/animatedradar/q/MD/Ocean_City.gif?newmaps=1&num=12&delay=50&interval=30&width=1000&height=500&timelabel=1&timelabel.x=850&timelabel.y=793&rainsnow=1&radius=50" scrolling="NO" allowtransparency="false" sandbox="allow-same-origin allow-scripts allow-popups" style="height: 500px;width: 800px; overflow:visible " frameborder="0"></iframe></h2>
-        <h3>ITS GONNA RAIN! </h3>
-        <p>also add info from severe weather alearts api. found a few api calls for this but have not yet figured out how to narrow the results to ocean city</p>
+        <h2><iframe src="http://api.wunderground.com/api/251beb4e6bf98f60/animatedradar/q/MD/Ocean_City.gif?newmaps=1&num=12&delay=50&interval=30&width=1000&height=450&timelabel=1&timelabel.x=850&timelabel.y=793&rainsnow=1&radius=50" 
+        scrolling="NO" allowtransparency="false" sandbox="allow-same-origin allow-scripts allow-popups" style="height: 450px;width: 900px; overflow:visible " frameborder="0"></iframe></h2>
+        <h3 style="color:red">Weather Alerts: <span class="name">{{this.caption}}</span></h3>
     </div>
     <div class="row">
         <div class="column" style="background-color:#ddd;">
             <div class="card-header">
                 <h1>{{this.weekday[1]}}</h1>
                 <div class="card-body text-primary">
-                    <h3 class="card-title">{{this.forecast.daily.data[1].summary}}</h3>
-                    <p class="card-text">Wind Speed: {{this.forecast.daily.data[1].windSpeed}}</p>
-                    <p class="card-text">Wind Gust: {{this.forecast.daily.data[1].windGust}}</p>
-                    <p class="card-text">Precip Intensity: {{this.forecast.daily.data[1].precipIntensity}}</p>
-                    <p class="card-text">Precip Probability: {{this.forecast.daily.data[1].precipProbability}}</p>
+                    <h4 class="card-title" style="color:#236E92">{{this.forecast.daily.data[1].summary}}</h4>
+                    <h5 class="card-text" style="color:#3597C6">Temp Hi: {{this.forecast.daily.data[1].temperatureHigh}}&#x2109;</h5>
+                    <h5 class="card-text" style="color:#3597C6">Temp Low: {{this.forecast.daily.data[1].temperatureLow}}&#x2109;</h5>
+                    <h5 class="card-text" style="color:#3597C6">Wind: {{this.forecast.daily.data[1].windSpeed}}mph</h5>
+                    <h5 class="card-text" style="color:#3597C6">Wind Gust: {{this.forecast.daily.data[1].windGust}}mph</h5>
+                    <h5 class="card-text" style="color:#3597C6">Chance of {{this.forecast.daily.data[1].precipType}}: {{this.precipProb[1]}}%</h5>
                 </div>
             </div>
         </div>
@@ -76,12 +80,12 @@
             <div class="card-header">
                 <h1>{{this.weekday[2]}}</h1>
                 <div class="card-body text-primary">
-                    <h3 class="card-title">{{this.forecast.daily.data[2].summary}}</h3>
-                    <p class="card-text">Wind Speed: {{this.forecast.daily.data[2].windSpeed}}</p>
-                    <p class="card-text">Wind Gust: {{this.forecast.daily.data[2].windGust}}</p>
-                    <p class="card-text">Precip Intensity: {{this.forecast.daily.data[2].precipIntensity}}</p>
-                    <p class="card-text">Precip Probability: {{this.forecast.daily.data[2].precipProbability}}</p>
-                    <p class="card-text">Pressure: {{this.forecast.daily.data[2].pressure}}</p>
+                    <h4 class="card-title" style="color:#236E92">{{this.forecast.daily.data[2].summary}}</h4>
+                    <h5 class="card-text" style="color:#3597C6">Temp Hi: {{this.forecast.daily.data[2].temperatureHigh}}&#x2109;</h5>
+                    <h5 class="card-text" style="color:#3597C6">Temp Low: {{this.forecast.daily.data[2].temperatureLow}}&#x2109;</h5>
+                    <h5 class="card-text" style="color:#3597C6">Wind: {{this.forecast.daily.data[2].windSpeed}}mph</h5>
+                    <h5 class="card-text" style="color:#3597C6">Wind Gust: {{this.forecast.daily.data[2].windGust}}mph</h5>
+                    <h5 class="card-text" style="color:#3597C6">Chance of {{this.forecast.daily.data[2].precipType}}: {{this.precipProb[2]}}%</h5>
                 </div>
             </div>
         </div>
@@ -89,17 +93,18 @@
             <div class="card-header">
                 <h1>{{this.weekday[3]}}</h1>
                 <div class="card-body text-primary">
-                    <h3 class="card-title" style="color:purple">{{this.forecast.daily.data[3].summary}}</h3>
-                    <p class="card-text" style="">Wind Speed: {{this.forecast.daily.data[3].windSpeed}}</p>
-                    <p class="card-text">Wind Gust: {{this.forecast.daily.data[3].windGust}}</p>
-                    <p class="card-text">Precip Intensity: {{this.forecast.daily.data[3].precipIntensity}}</p>
-                    <p class="card-text">Precip Probability: {{this.forecast.daily.data[3].precipProbability}}</p>
+                    <h4 class="card-title" style="color:#236E92">{{this.forecast.daily.data[3].summary}}</h4>
+                    <h5 class="card-text" style="color:#3597C6">Temp Hi: {{this.forecast.daily.data[3].temperatureHigh}}&#x2109;</h5>
+                    <h5 class="card-text" style="color:#3597C6">Temp Low: {{this.forecast.daily.data[3].temperatureLow}}&#x2109;</h5>
+                    <h5 class="card-text" style="color:#3597C6">Wind: {{this.forecast.daily.data[3].windSpeed}}mph</h5>
+                    <h5 class="card-text" style="color:#3597C6">Wind Gust: {{this.forecast.daily.data[3].windGust}}mph</h5>
+                    <h5 class="card-text" style="color:#3597C6">Chance of {{this.forecast.daily.data[3].precipType}}: {{this.precipProb[3]}}%</h5>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer">
-        <p>maybe alerts or links here</p>
+        <p></p>
     </div>
 </body>
 </html>
