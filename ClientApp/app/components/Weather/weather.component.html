@@ -5,61 +5,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-    span.name { color:black }
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        margin: 0;
-    }
-
-    /* Style the header */
-    .header {
-        background-color: #f1f1f1;
-        padding: 5px;
-        text-align: center;
-    }
-
-    /* Create three equal columns that floats next to each other */
-    .column {
-        float: left;
-        width: 33.33%;
-        padding: 10px;
-        height: 275px; /* Should be removed. Only for demonstration */
-        text-align: center;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    /* Style the footer */
-    .footer {
-        background-color: #f1f1f1;
-        padding: 10px;
-        text-align: center;
-    }
-
-    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-    @media (max-width: 600px) {
-        .column {
-            width: 100%;
+        span.name {
+            color: black
         }
-    }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* Style the header */
+        .header {
+            background-color: #f1f1f1;
+            padding: 5px;
+            text-align: center;
+        }
+
+        /* Create three equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            height: 275px; /* Should be removed. Only for demonstration */
+            text-align: center;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Style the footer */
+        .footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+        @media (max-width: 600px) {
+            .column {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header" height="1">
-        <h2>Current Weather Conditions for Ocean City Maryland:</h2>
-        <h4 style="color:#2593C7">{{this.forecast.currently.summary}}, Chance of {{this.forecast.daily.data[0].precipType}}: {{this.precipProb[0]}}%, Temperature: {{this.forecast.currently.temperature}}&#x2109;, 
-        Wind: {{this.forecast.currently.windSpeed}}mph, Visibility: {{this.forecast.currently.visibility}}mi</h4>
         <!-- <img src="real-fake-doors.jpg" height="300" width="400"/> -->
-        <h2><iframe src="http://api.wunderground.com/api/251beb4e6bf98f60/animatedradar/q/MD/Ocean_City.gif?newmaps=1&num=12&delay=50&interval=30&width=1000&height=450&timelabel=1&timelabel.x=850&timelabel.y=793&rainsnow=1&radius=50" 
-        scrolling="NO" allowtransparency="false" sandbox="allow-same-origin allow-scripts allow-popups" style="height: 450px;width: 900px; overflow:visible " frameborder="0"></iframe></h2>
+        <h2>
+            <iframe src="http://www.zoomforecast.com/zoomradar_weather_map/weather_image_user.php?key=xaTCXFA983YSvyb" width="700" height="600" style="border:0" frameBorder="0" seamless="seamless" scrolling="no" allowfullscreen="true"></iframe>
+        </h2>
         <h3 style="color:red">Weather Alerts: <span class="name">{{this.caption}}</span></h3>
     </div>
     <div class="row">
