@@ -30,7 +30,7 @@ export class WeatherComponent {
             var xx = new Date();
             xx.setTime((this.forecast.daily.data[i].time)*1000);
             this.weekday.push(Wday[xx.getDay()]);
-            console.log(this.forecast.daily.data[i].icon);
+            
         }
 
         for(var i = 0; i < 5; i++) {
@@ -44,6 +44,7 @@ export class WeatherComponent {
 
         for (var i = 0; i < 5; i++) {
             console.log(this.weekday[i]);
+            console.log(this.forecast.daily.data[4].icon);
         }
 
 
