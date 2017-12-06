@@ -20,17 +20,42 @@
         /* Style the header */
         .header {
             background-color: #f1f1f1;
-            padding: 5px;
+            padding: 0;
             text-align: center;
+            width: 100%;
+            border-right-width: 10px;
+            border-right-style: ridge;
+            border-right-color: darkgray;
+            border-bottom-width: 10px;
+            border-bottom-style: ridge;
+            border-bottom-color: darkgray;
+            border-top-width: 10px;
+            border-top-style: ridge;
+            border-top-color: darkgray;
+            border-left-width: 10px;
+            border-left-style: ridge;
+            border-left-color: darkgray;
         }
 
         /* Create three equal columns that floats next to each other */
         .column {
             float: left;
             width: 33.33%;
-            padding: 10px;
-            height: 275px; /* Should be removed. Only for demonstration */
+            padding: 0;
+            height: 325px; /*Should be removed. Only for demonstration */
             text-align: center;
+            border-right-width: 5px;
+            border-right-style: ridge;
+            border-right-color: darkgray;
+            border-bottom-width: thick;
+            border-bottom-style: ridge;
+            border-bottom-color: darkgray;
+            border-top-width: thick;
+            border-top-style: ridge;
+            border-top-color: darkgray;
+            border-left-width: thick;
+            border-left-style: ridge;
+            border-left-color: darkgray;
         }
 
         /* Clear floats after the columns */
@@ -73,7 +98,7 @@
                     <img style="height:100px; width: 100px;" *ngIf="forecast.daily.data[1].icon == 'partly-cloudy-day'" src="/animated/cloudy-day-1.svg">
                     <img style="height:100px; width: 100px;" *ngIf="forecast.daily.data[1].icon == 'rain'" src="/animated/rainy-6.svg">
                 </h1>
-                    
+
                 <div class="card-body text-primary">
                     <h4 class="card-title" style="color:#236E92">{{this.forecast.daily.data[1].summary}}</h4>
                     <h5 class="card-text" style="color:#3597C6">Temp Hi: {{this.forecast.daily.data[1].temperatureHigh}}&#x2109;</h5>
@@ -86,9 +111,11 @@
         </div>
         <div class="column" style="background-color:#ccc;">
             <div class="card-header">
-                <h1>{{this.weekday[2]}} <img style="height:100px; width: 100px;" *ngIf="forecast.daily.data[2].icon == 'snow'" src="/animated/snowy-5.svg">
-                                         <img style="height:100px; width: 100px;" *ngIf="forecast.daily.data[2].icon == 'partly-cloudy-day'" src="/animated/cloudy-day-1.svg">
-                                            <img style="height:100px; width: 100px;" *ngIf="forecast.daily.data[2].icon == 'rain'" src="/animated/rainy-6.svg"></h1>
+                <h1>
+                    {{this.weekday[2]}} <img style="height:100px; width: 100px;" *ngIf="forecast.daily.data[2].icon == 'snow'" src="/animated/snowy-5.svg">
+                    <img style="height:100px; width: 100px;" *ngIf="forecast.daily.data[2].icon == 'partly-cloudy-day'" src="/animated/cloudy-day-1.svg">
+                    <img style="height:100px; width: 100px;" *ngIf="forecast.daily.data[2].icon == 'rain'" src="/animated/rainy-6.svg">
+                </h1>
                 <div class="card-body text-primary">
                     <h4 class="card-title" style="color:#236E92">{{this.forecast.daily.data[2].summary}}</h4>
                     <h5 class="card-text" style="color:#3597C6">Temp Hi: {{this.forecast.daily.data[2].temperatureHigh}}&#x2109;</h5>
@@ -113,7 +140,7 @@
                     <h5 class="card-text" style="color:#3597C6">Wind: {{this.forecast.daily.data[3].windSpeed}}mph</h5>
                     <h5 class="card-text" style="color:#3597C6">Wind Gust: {{this.forecast.daily.data[3].windGust}}mph</h5>
                     <h5 class="card-text" style="color:#3597C6">Chance of {{this.forecast.daily.data[3].precipType}}: {{this.precipProb[3]}}%</h5>
-                   
+
                 </div>
             </div>
         </div>
