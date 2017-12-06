@@ -68,8 +68,12 @@
     <div class="row">
         <div class="column" style="background-color:#ddd;">
             <div class="card-header">
-                <h1>{{this.weekday[1]}} <img *ngIf="forecast.daily.data[1].icon == 'snow'" src="/animated/snowy-5.svg">
-                    <img *ngIf="forecast.daily.data[1].icon == 'partly-cloudy-day'" src="/animated/cloudy-day-1.svg"></h1>
+                <h1>
+                    {{this.weekday[1]}} <img *ngIf="forecast.daily.data[1].icon == 'snow'" src="/animated/snowy-5.svg">
+                    <img *ngIf="forecast.daily.data[1].icon == 'partly-cloudy-day'" src="/animated/cloudy-day-1.svg">
+                    <img *ngIf="forecast.daily.data[1].icon == 'rain'" src="/animated/rainy-6.svg">
+                </h1>
+                    
                 <div class="card-body text-primary">
                     <h4 class="card-title" style="color:#236E92">{{this.forecast.daily.data[1].summary}}</h4>
                     <h5 class="card-text" style="color:#3597C6">Temp Hi: {{this.forecast.daily.data[1].temperatureHigh}}&#x2109;</h5>
@@ -99,6 +103,7 @@
             <div class="card-header">
                 <h1>
                     {{this.weekday[3]}} <img *ngIf="forecast.daily.data[3].icon == 'snow'" src="/animated/snowy-5.svg">
+                    <img *ngIf="forecast.daily.data[3].icon == 'partly-cloudy-day'" src="/animated/cloudy-day-1.svg">
                     <img *ngIf="forecast.daily.data[3].icon == 'partly-cloudy-day'" src="/animated/cloudy-day-1.svg">
                 </h1>
                 <div class="card-body text-primary">
