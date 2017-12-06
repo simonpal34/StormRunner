@@ -5,7 +5,7 @@ import { Http } from '@angular/http';
 
 @Component({
     selector: 'weather',
-    templateUrl: './weather.component.html'
+    templateUrl: './weather.component.html',
 })
 export class WeatherComponent {
     svc: WeatherService;
@@ -30,6 +30,7 @@ export class WeatherComponent {
             var xx = new Date();
             xx.setTime((this.forecast.daily.data[i].time)*1000);
             this.weekday.push(Wday[xx.getDay()]);
+            console.log(this.forecast.daily.data[i].icon);
         }
 
         for(var i = 0; i < 5; i++) {

@@ -54,6 +54,8 @@
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
 </head>
 <body>
     <div class="header" height="1">
@@ -94,12 +96,13 @@
             <div class="card-header">
                 <h1>{{this.weekday[3]}}</h1>
                 <div class="card-body text-primary">
-                    <h4 class="card-title" style="color:#236E92">{{this.forecast.daily.data[3].summary}}</h4>
+                    <h4 class="card-title" style="color:#236E92">{{this.forecast.daily.data[3].summary}}<img *ngIf="forecast.daily.data[2].icon === partly-cloudy-day" src="/animated/cloudy-day-1.svg"> </h4>
                     <h5 class="card-text" style="color:#3597C6">Temp Hi: {{this.forecast.daily.data[3].temperatureHigh}}&#x2109;</h5>
                     <h5 class="card-text" style="color:#3597C6">Temp Low: {{this.forecast.daily.data[3].temperatureLow}}&#x2109;</h5>
                     <h5 class="card-text" style="color:#3597C6">Wind: {{this.forecast.daily.data[3].windSpeed}}mph</h5>
                     <h5 class="card-text" style="color:#3597C6">Wind Gust: {{this.forecast.daily.data[3].windGust}}mph</h5>
                     <h5 class="card-text" style="color:#3597C6">Chance of {{this.forecast.daily.data[3].precipType}}: {{this.precipProb[3]}}%</h5>
+                   
                 </div>
             </div>
         </div>
