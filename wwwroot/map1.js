@@ -30,18 +30,18 @@ InfoTemplate) {
         zoom: 13
     });
     
-    map.on("load", addSomeGraphics);
+    map.on("load", addPoints);
 
-    //Medical symbol
+    /*Medical symbol*/
     var pointSymbol = new SimpleMarkerSymbol();
     pointSymbol.setColor(new Color("red"));
-    //Gas station symbol
+    /*Gas station symbol*/
     var pointSymbol2 = new SimpleMarkerSymbol();
     pointSymbol2.setColor(new Color("#22D900"));
-    //Fire Department
+    /*Fire Department*/
     var pointSymbol3 = new SimpleMarkerSymbol();
     pointSymbol3.setColor(new Color("#ff0099"));
-    //Police symbol
+    /*Police symbol*/
     var pointSymbol4 = new SimpleMarkerSymbol();
     pointSymbol4.setColor(new Color("blue"));
 
@@ -113,7 +113,7 @@ InfoTemplate) {
     graphicsArray.push(pointGraphic10);
     graphicsArray.push(pointGraphic11);
 
-    function addSomeGraphics() {
+    function addPoints() {
       for (i = 0; i < graphicsArray.length; ++i) {
           map.graphics.add(graphicsArray[i]);
       }
