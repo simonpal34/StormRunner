@@ -5,79 +5,79 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        span.name {
-            color: black
-        }
+    span.name {
+        color: black
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    * {
+        box-sizing: content-box|border-box|initial|inherit;
+    }
 
-        body {
-            margin: 0;
-        }
+    body {
+        margin: 0;
+    }
 
-        /* Style the header */
-        .header {
-            background-color: #f1f1f1;
-            padding: 0;
-            text-align: center;
-            width: 100%;
-            border-right-width: 10px;
-            border-right-style: ridge;
-            border-right-color: darkgray;
-            border-bottom-width: 10px;
-            border-bottom-style: ridge;
-            border-bottom-color: darkgray;
-            border-top-width: 10px;
-            border-top-style: ridge;
-            border-top-color: darkgray;
-            border-left-width: 10px;
-            border-left-style: ridge;
-            border-left-color: darkgray;
-        }
+    /* Style the header */
+    .header {
+        background-color: #f1f1f1;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        border-right-width: 10px;
+        border-right-style: ridge;
+        border-right-color: darkgray;
+        border-bottom-width: 10px;
+        border-bottom-style: ridge;
+        border-bottom-color: darkgray;
+        border-top-width: 10px;
+        border-top-style: ridge;
+        border-top-color: darkgray;
+        border-left-width: 10px;
+        border-left-style: ridge;
+        border-left-color: darkgray;
+    }
 
-        /* Create three equal columns that floats next to each other */
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 0;
+        height: 325px; /*Should be removed. Only for demonstration */
+        text-align: center;
+        border-right-width: 5px;
+        border-right-style: ridge;
+        border-right-color: darkgray;
+        border-bottom-width: thick;
+        border-bottom-style: ridge;
+        border-bottom-color: darkgray;
+        border-top-width: thick;
+        border-top-style: ridge;
+        border-top-color: darkgray;
+        border-left-width: thick;
+        border-left-style: ridge;
+        border-left-color: darkgray;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Style the footer */
+    .footer {
+        background-color: #f1f1f1;
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media (max-width: 600px) {
         .column {
-            float: left;
-            width: 33.33%;
-            padding: 0;
-            height: 325px; /*Should be removed. Only for demonstration */
-            text-align: center;
-            border-right-width: 5px;
-            border-right-style: ridge;
-            border-right-color: darkgray;
-            border-bottom-width: thick;
-            border-bottom-style: ridge;
-            border-bottom-color: darkgray;
-            border-top-width: thick;
-            border-top-style: ridge;
-            border-top-color: darkgray;
-            border-left-width: thick;
-            border-left-style: ridge;
-            border-left-color: darkgray;
+            width: 100%;
         }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* Style the footer */
-        .footer {
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-        }
-
-        /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-        @media (max-width: 600px) {
-            .column {
-                width: 100%;
-            }
-        }
+    }
     </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
@@ -87,7 +87,7 @@
         <h2>Current Weather Conditions for Ocean City Maryland:</h2>
         <h4 style="color:#2593C7">{{this.forecast.currently.summary}}, Chance of {{this.forecast.daily.data[0].precipType}}: {{forecast.currently.precipProbability}}%, Temperature: {{this.forecast.currently.temperature}}&#x2109;, Wind: {{this.forecast.currently.windSpeed}}mph, Visibility: {{this.forecast.currently.visibility}}mi</h4>
         <!-- <img src="real-fake-doors.jpg" height="300" width="400"/> -->
-        <h2><iframe src="https://www.rainviewer.com/map.html?loc=38.695797,-77.879284,5.593611500958603&oFa=1&oC=1&oU=0&oCUB=1&oCS=1&oF=0&oAP=1&rmt=1" scrolling="NO" allowtransparency="false" sandbox="allow-same-origin allow-scripts allow-popups" style="height: 450px;width: 900px; overflow:visible " frameborder="0"></iframe></h2>
+        <h2><iframe src="https://www.rainviewer.com/map.html?loc=38.695797,-77.879284,5.593611500958603&oFa=1&oC=1&oU=0&oCUB=1&oCS=1&oF=0&oAP=1&rmt=1" scrolling="YES" allowtransparency="false" sandbox="allow-same-origin allow-scripts allow-popups" style="height: 450px;width: 900px; overflow:visible " frameborder="0"></iframe></h2>
         <h3 style="color:red">Weather Alerts: <span class="name">{{this.caption}}</span></h3>
     </div>
     <div class="row">

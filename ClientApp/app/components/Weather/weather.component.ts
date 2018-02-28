@@ -14,6 +14,8 @@ export class WeatherComponent {
     weekday: string[]=[];
     caption: string;
     precipProb: string[]=[];
+    precipInten: number=0;
+    stormInterval: number=0;
 
     constructor(http : Http){
         this.svc = new WeatherService(http);
@@ -30,23 +32,36 @@ export class WeatherComponent {
             var xx = new Date();
             xx.setTime((this.forecast.daily.data[i].time)*1000);
             this.weekday.push(Wday[xx.getDay()]);
-            
         }
-
         for(var i = 0; i < 5; i++) {
-            
             var p = this.forecast.daily.data[i].precipProbability*100;
-
             this.precipProb.push(p.toFixed());
         }
-
+        for(var i = 0; i < 24; i++) {
+            this.precipInten = (this.precipInten)+(this.forecast.hourly.data[i].precipIntensity);
+        }
+            if(this.precipInten<2)
+                this.stormInterval = 0;
+            if((this.precipInten>=2)&&(this.precipInten<3))
+                this.stormInterval = 5;
+            if((this.precipInten>=3)&&(this.precipInten<4))
+                this.stormInterval = 10;
+            if((this.precipInten>=4)&&(this.precipInten<6))
+                this.stormInterval = 20;
+            if((this.precipInten>=6)&&(this.precipInten<8))
+                this.stormInterval = 50;
+            if(this.precipInten>=8)
+                this.stormInterval = 100;
+       
         if(typeof this.forecast.alerts === "undefined")             this.caption = "No Current Alerts";         else             this.caption = this.forecast.alerts.title;
 
         for (var i = 0; i < 5; i++) {
             console.log(this.weekday[i]);
-            console.log(this.forecast.daily.data[4].icon);
-        }
+            console.log(this.forecast.hourly.data[i].precipIntensity);
+            console.log(this.precipInten);
+            console.log(this.stormInterval);
 
+        }
 
 
     }

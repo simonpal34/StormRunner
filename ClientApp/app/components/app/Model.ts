@@ -1,13 +1,19 @@
 ﻿export abstract class WeatherModel
 {
-    daily: Days;
     currently: currentData;
+    hourly: Hours;
+    daily: Days;
     alerts: severeAlerts;
 }
 
 export abstract class Days
 {
     data: dailyData[];
+}
+
+export abstract class Hours
+{
+    data: hourlyData[];
 }
 
 export abstract class currentData
@@ -45,6 +51,11 @@ export abstract class dailyData
     cloudCover: number;
     uvIndex: number;
     visibility: number;
+}
+
+export abstract class hourlyData
+{
+    precipIntensity: number;
 }
 
 export abstract class severeAlerts {     title: string;     time: number;     expires: number;     description: string;     regions: string;     severity: string;     uri: string; }
