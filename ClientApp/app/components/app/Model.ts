@@ -3,7 +3,7 @@
     currently: currentData;
     hourly: Hours;
     daily: Days;
-    alerts: severeAlerts;
+    alerts: severeAlerts[];
 }
 
 export abstract class Days
@@ -58,4 +58,7 @@ export abstract class hourlyData
     precipIntensity: number;
 }
 
-export abstract class severeAlerts {     title: string;     time: number;     expires: number;     description: string;     regions: string;     severity: string;     uri: string; }
+export abstract class severeAlerts {     title: string;     regions: string;     severity: string;
+    time: number;
+    expires: number;
+    description: string;     uri: string; }

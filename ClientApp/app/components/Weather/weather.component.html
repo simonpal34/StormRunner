@@ -1,6 +1,7 @@
 ﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    var exist = {{this.site}}
     <title>CSS Template</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -89,6 +90,7 @@
         <!-- <img src="real-fake-doors.jpg" height="300" width="400"/> -->
         <h2><iframe src="https://www.rainviewer.com/map.html?loc=38.695797,-77.879284,5.593611500958603&oFa=1&oC=1&oU=0&oCUB=1&oCS=1&oF=0&oAP=1&rmt=1" scrolling="YES" allowtransparency="false" sandbox="allow-same-origin allow-scripts allow-popups" style="height: 450px;width: 900px; overflow:visible " frameborder="0"></iframe></h2>
         <h3 style="color:red">Weather Alerts: <span class="name">{{this.caption}}</span></h3>
+        <h4><a href={{this.site}}>Click Here For Alert Details</a></h4>
     </div>
     <div class="row">
         <div class="column" style="background-color:#ddd;">
