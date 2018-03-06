@@ -21,8 +21,11 @@ export class WeatherService {
         headers.append('Access-Control-Allow-Origin', '*');
 
         let options = new RequestOptions({ headers: headers });
-        return await this.http.get("https://api.darksky.net/forecast/2d451954e99d3db65a8dc448c4d37e0f/38.3365,-75.0849?units=us&lang=en&exclude=minutely,flags", options).toPromise()
-            .then(response => response.json() as WeatherModel);
+        /** use next line for local json server */
+        /** return await this.http.get("http://localhost:3000/WeatherModel/", */
+        /** comment out next line to use json server */
+        return await this.http.get("https://api.darksky.net/forecast/2d451954e99d3db65a8dc448c4d37e0f/38.3365,-75.0849?units=us&lang=en&exclude=minutely,flags",
+        options).toPromise().then(response => response.json() as WeatherModel);
 
 
     }
