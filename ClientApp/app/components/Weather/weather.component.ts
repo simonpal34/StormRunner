@@ -15,7 +15,7 @@ export class WeatherComponent {
     caption: string;
     precipProb: string[]=[];
     precipInten: number=0;
-    stormInterval: number=0;
+    stormInterval: number;
     site: string;
 
     constructor(http : Http){
@@ -44,8 +44,8 @@ export class WeatherComponent {
         for(var i = 0; i < 24; i++)
             this.precipInten = (this.precipInten)+(this.forecast.hourly.data[i].precipIntensity);
         
-        if(this.precipInten<2)
-              this.stormInterval = 0;
+        /** if(this.precipInten<2)
+              this.stormInterval = 0;*/
         if((this.precipInten>=2)&&(this.precipInten<3))
               this.stormInterval = 5;
         if((this.precipInten>=3)&&(this.precipInten<4))
