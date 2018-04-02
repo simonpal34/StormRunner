@@ -13,6 +13,7 @@ import { WeatherService } from'./components/Services/WeatherService';
 import { EsriLoaderService } from 'angular2-esri-loader';
 import { InterestPointsComponent } from './components/InterestPoints/InterestPoints.component';
 import { EvacuationMapComponent } from './components/EvacuationMap/EvacuationMap.component';
+import { AngularEsriModule } from 'angular-esri-components';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { EvacuationMapComponent } from './components/EvacuationMap/EvacuationMap
         CommonModule,
         HttpModule,
         FormsModule,
+        AngularEsriModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'weather', pathMatch: 'full' },
             { path: 'points_of_interest', component: InterestPointsComponent },
