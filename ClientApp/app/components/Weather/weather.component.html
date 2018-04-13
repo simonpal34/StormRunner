@@ -22,8 +22,9 @@
         background-color: #f1f1f1;
         padding: 0;
         text-align: center;
-        width: 100%;
-        border-right-width: 10px;
+        margin: auto;
+        //width: 100%;
+        /*border-right-width: 10px;
         border-right-style: ridge;
         border-right-color: darkgray;
         border-bottom-width: 10px;
@@ -34,7 +35,7 @@
         border-top-color: darkgray;
         border-left-width: 10px;
         border-left-style: ridge;
-        border-left-color: darkgray;
+        border-left-color: darkgray;*/
     }
 
     /* Create three equal columns that floats next to each other */
@@ -44,7 +45,7 @@
         padding: 0;
         height: 325px; /*Should be removed. Only for demonstration */
         text-align: center;
-        border-right-width: 5px;
+        /*border-right-width: 5px;
         border-right-style: ridge;
         border-right-color: darkgray;
         border-bottom-width: thick;
@@ -55,9 +56,13 @@
         border-top-color: darkgray;
         border-left-width: thick;
         border-left-style: ridge;
-        border-left-color: darkgray;
+        border-left-color: darkgray;*/
     }
-
+    .row{
+        margin: auto;
+        //vertical-align: top;
+        margin-top: -10px;
+    }
     /* Clear floats after the columns */
     .row:after {
         content: "";
@@ -97,7 +102,7 @@
         <ng-template #elseBlock2> </ng-template>
 </div>
     <div class="row">
-        <div class="column" style="background-color:#ddd;">
+        <div class="column" style="background-color:#f1f1f1;">
             <div class="card-header">
                 <h1>  {{this.weekday[1]}}<img style="height:100px; width: 100px;" src="/animated/{{this.forecast.daily.data[1].icon}}.svg"></h1>
                 <div class="card-body text-primary">
@@ -110,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="column" style="background-color:#ccc;">
+        <div class="column" style="background-color:#f0f0f0;">
             <div class="card-header">
                 <h1>{{this.weekday[2]}} <img style="height:100px; width: 100px;" src="/animated/{{this.forecast.daily.data[2].icon}}.svg"></h1>
                 <div class="card-body text-primary">
@@ -123,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <div class="column" style="background-color:#ddd;">
+        <div class="column" style="background-color:#f1f1f1;">
             <div class="card-header">
                 <h1>{{this.weekday[3]}} <img style="height:100px; width: 100px;" src="/animated/{{this.forecast.daily.data[3].icon}}.svg"></h1>
                 <div class="card-body text-primary">
