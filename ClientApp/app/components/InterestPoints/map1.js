@@ -11,10 +11,12 @@ require(["esri/map",
     "esri/symbols/SimpleFillSymbol",
     "esri/Color",
     "esri/InfoTemplate",
-    "esri/geometry",
     "dojo/parser",
-    "dijit/layout/BorderContainer", "dijit/layout/ContentPane",
-    "dojo/domReady!"], function (Map,
+    "dijit/layout/BorderContainer", 
+    "dijit/layout/ContentPane",
+    "dojo/domReady!",
+    "esri/geometry"], function (Map,
+
         Geometry,
         Point,
         Polyline,
@@ -34,16 +36,16 @@ require(["esri/map",
         
         map.on("load", addPoints);
 
-    /*Medical symbol*/
+    //Medical symbol
     var pointSymbol = new SimpleMarkerSymbol();
     pointSymbol.setColor(new Color("red"));
-    /*Gas station symbol*/
+    //Gas station symbol
     var pointSymbol2 = new SimpleMarkerSymbol();
     pointSymbol2.setColor(new Color("#22D900"));
-    /*Fire Department*/
+    //Fire Department
     var pointSymbol3 = new SimpleMarkerSymbol();
     pointSymbol3.setColor(new Color("#ff0099"));
-    /*Police symbol*/
+    //Police symbol
     var pointSymbol4 = new SimpleMarkerSymbol();
     pointSymbol4.setColor(new Color("blue"));
 
