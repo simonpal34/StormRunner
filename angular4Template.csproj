@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <None Remove="ClientApp\app\components\InterestPoints\map1.js" />
+    <None Remove="ClientApp\app\components\InterestPoints\interestmap.component.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\iframeMap.html" />

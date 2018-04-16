@@ -11,10 +11,7 @@ require(["esri/map",
     "esri/symbols/SimpleFillSymbol",
     "esri/Color",
     "esri/InfoTemplate",
-    "esri/geometry",
-    "dojo/parser",
-    "dijit/layout/BorderContainer", "dijit/layout/ContentPane",
-    "dojo/domReady!"], function (Map,
+    "esri/geometry"], function (Map,
         Geometry,
         Point,
         Polyline,
@@ -24,8 +21,8 @@ require(["esri/map",
         SimpleLineSymbol,
         SimpleFillSymbol,
         Color,
-        InfoTemplate, parser) {
-        parser.parse();
+        InfoTemplate) {
+
         map = new Map("map", {
             basemap: "streets",
             center: [-75.070529, 38.385861],
