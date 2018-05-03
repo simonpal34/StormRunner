@@ -25,12 +25,6 @@
     <None Remove="ClientApp\app\components\InterestPoints\map1.js" />
     <None Remove="ClientApp\app\components\InterestPoints\interestmap.component.js" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="ClientApp\app\components\EvacuationMap\map.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\iframeMap.html" />
     <None Include="wwwroot\map.js" />
