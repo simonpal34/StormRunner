@@ -10,7 +10,6 @@
     parser
 ) {
         parser.parse();
-
         var map = new Map("map", {
             basemap: "streets",
             center: [-75.070529, 38.385861],
