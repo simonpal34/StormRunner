@@ -53,6 +53,12 @@
         <div id="police"></div>
              <p>&nbsp;&nbsp;Police Stations</p>
              <p id="decription">Click on a point to see direcription</p>
+        <select class="dropdown">
+            <option *ngFor="let string of places">
+                {{string}}
+            </option>
+            
+        </select>
          </div>
          <iframe src="interestMap.html" style="height:750px; width:74%;"></iframe>
     </div>

@@ -7,7 +7,9 @@ import { Http } from '@angular/http';
     templateUrl: './InterestPoints.component.html' 
 })
 export class InterestPointsComponent {
-constructor(http: Http) {
+    public places: string[];
+    constructor(http: Http) {
+        this.places = ["75th St. Medical Center","7-Eleven"]
     }
     
  
