@@ -39,7 +39,7 @@ require(["esri/map",
     pointSymbol2.setColor(new Color("#22D900"));
     /*Fire Department*/
     var pointSymbol3 = new SimpleMarkerSymbol();
-    pointSymbol3.setColor(new Color("#ff0099"));
+    pointSymbol3.setColor(new Color("#FFA500"));
     /*Police symbol*/
     var pointSymbol4 = new SimpleMarkerSymbol();
     pointSymbol4.setColor(new Color("blue"));
@@ -73,7 +73,7 @@ require(["esri/map",
     var point6 = new Point(-75.080494, 38.345557);
     var pointAttributes6 = { Address: "1409 Philadelphia Ave, Ocean City, MD 21842" };
     var pointInfoTemplate6 = new InfoTemplate("Ocean City Fire Department");
-    var pointGraphic6 = new Graphic(point6, pointSymbol4, pointAttributes6).setInfoTemplate(pointInfoTemplate6);
+    var pointGraphic6 = new Graphic(point6, pointSymbol3, pointAttributes6).setInfoTemplate(pointInfoTemplate6);
 
     var point7 = new Point(-75.067880, 38.383138);
     var pointAttributes7 = { Address: "5809 Coastal Hwy, Ocean City, MD 21842" };
@@ -117,4 +117,6 @@ require(["esri/map",
           map.graphics.add(graphicsArray[i]);
       }
   }
+  var l = document.getElementById("location");
+  alert(l);
 });

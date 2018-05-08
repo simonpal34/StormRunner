@@ -9,7 +9,7 @@ import { Http } from '@angular/http';
 export class InterestPointsComponent {
     public places: string[];
     constructor(http: Http) {
-        this.places = ["75th St. Medical Center","7-Eleven"]
+        this.places = ["75th St. Medical Center","7-Eleven", "Exxon"]
     }
     
  

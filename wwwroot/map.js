@@ -1,14 +1,40 @@
-﻿require([
+﻿var l;
+function getAddr(id){
+        
+        l=document.getElementById("location").value=id;
+        localStorage.setItem("l", l);
+        location.href="http://localhost:5000/evac-map";
+        l=document.getElementById("location").value=id;
+}
+/*function get(){
+    l=document.getElementById("location").value=id;
+}*/
+
+require([
     "esri/map",
     "esri/layers/FeatureLayer",
-    "esri/urlUtils", "esri/dijit/Directions",
+    "esri/urlUtils", "esri/dijit/Directions", "esri/symbols/SimpleLineSymbol",
+    "esri/symbols/SimpleFillSymbol",
+    "esri/Color",
+    "esri/geometry/Point", "esri/SpatialReference"
 
 ], function (
-    Map, FeatureLayer, urlUtils, Directions,
+    Map, FeatureLayer, urlUtils, Directions, SimpleLineSymbol, SimpleLineSymbol, Color, Point, SpatialReference,
     parser
 ) {
-    //document.getElementById("ok").value = "hello";
-    var m = document.getElementById("map");
+        l = localStorage.getItem("l");
+        var clear="";
+         var point1 = new Point(-75.075793, 38.356461, new SpatialReference({ wkid: 4326 }));
+         var point2 = new Point(-75.062644, 38.395349, new SpatialReference({ wkid: 4326 }));
+         var point3 = new Point(-75.053054, 38.447388, new SpatialReference({ wkid: 4326 }));
+         var point4 = new Point(-75.066986, 38.388399, new SpatialReference({ wkid: 4326 }));
+         var point5 = new Point(-75.067880, 38.383138, new SpatialReference({ wkid: 4326 }));
+         var point6 = new Point(-75.069253, 38.377789, new SpatialReference({ wkid: 4326 }));
+         var point7 = new Point(-75.080494, 38.345557, new SpatialReference({ wkid: 4326 }));
+         var point8 = new Point(-75.087576, 38.332022, new SpatialReference({ wkid: 4326 }));
+         var point9 = new Point(-75.105007, 38.335679, new SpatialReference({ wkid: 4326 }));
+
+    //var m = document.getElementById("map");
         var map = new Map("map", {
             basemap: "streets",
             center: [-75.070529, 38.385861],
@@ -24,4 +50,44 @@
 
         }, d);
         directions.startup();
+        if(l=="2611 N Philadelphia Ave, Ocean City, MD 21842"){
+            directions.addStop(point1, 1);
+            localStorage.setItem("l", clear);
+            //alert("close");
+        }
+        else if(l=="7408 Coastal Hwy, Ocean City, MD 21842"){
+            directions.addStop(point2, 1);
+            localStorage.setItem("l", clear);
+        }
+        else if(l=="14107 Coastal Hwy, Ocean City, MD 21842"){
+            directions.addStop(point3, 1);
+            localStorage.setItem("l", clear);
+        }
+        else if(l=="6501 Coastal Hwy, Ocean City, MD 21842"){
+            directions.addStop(point4, 1);
+            localStorage.setItem("l", clear);
+        }
+        else if(l=="5809 Coastal Hwy, Ocean City, MD 21842"){
+            directions.addStop(point5, 1);
+            localStorage.setItem("l", clear);
+        }
+        else if(l=="5201 Coastal Hwy, Ocean City, MD 21842"){
+            directions.addStop(point6, 1);
+            localStorage.setItem("l", clear);
+        }
+        else if(l=="1409 Philadelphia Ave, Ocean City, MD 21842"){
+            directions.addStop(point7, 1);
+            localStorage.setItem("l", clear);
+        }
+        else if(l=="5 Philadelphia Ave, Ocean City, MD 21842"){
+            directions.addStop(point8, 1);
+            localStorage.setItem("l", clear);
+        }
+        else if(l=="12826A Ocean Gateway, Ocean City, MD 21842"){
+            directions.addStop(point9, 1);
+            localStorage.setItem("l", clear);
+        }
+        else{
+            direction.removeStop(1);
+        }
     });
