@@ -78,6 +78,7 @@
         border: 1px solid #ddd;
         z-index: 1;
         right: 0;
+        //overflow: auto;
     }
 
     .dropdown-content a {
@@ -94,7 +95,7 @@
 
     .show {display:block;}
     </style>
-    <script type="text/javascript">alert("hello");</script>
+    <!--<script type="text/javascript">alert("hello");</script>-->
 </head>
 <body>
     <div class="row">
@@ -116,7 +117,7 @@
         </select>-->
         <div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Select Location</button>
-            <div id="myDropdown" class="dropdown-content">
+            <div id="myDropdown" class="dropdown-content" style="height: 300px; overflow: scroll;">
                 <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
                 <a onclick="getAddr('14107 Coastal Hwy, Ocean City, MD 21842')"><div id="gas"></div>Exxon 142nd St.</a>
                 <a onclick="getAddr('7408 Coastal Hwy, Ocean City, MD 21842')"><div id="medical"></div>75th Medical Center</a>

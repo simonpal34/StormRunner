@@ -16,10 +16,3 @@ function filterFunction() {
         }
     }
 }
-
-/*function getAddr(id){
-        
-        document.getElementById("location").value=id;
-        alert(document.getElementById("location").value);
-        location.href="http://localhost:5000/evac-map"
-}*/

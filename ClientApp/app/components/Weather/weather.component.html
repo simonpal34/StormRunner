@@ -58,6 +58,9 @@
           rel="stylesheet">
 </head>
 <body>
+        <!--><div *ngIf="this.site != undefined; getInterval(this.stormInterval) else getInterval(0)"></div>
+        <ng-template #thenBlock2><h4><a href={{this.site}} target="_blank">Click Here For Alert Details</a></h4></ng-template>
+        <ng-template #elseBlock2> </ng-template>-->
     <div class="header" height="1">
         <h2>Current Weather Conditions for Ocean City Maryland:</h2>
         <div *ngIf="this.stormInterval >= 10; then thenBlock1 else elseBlock1"></div>
@@ -71,7 +74,7 @@
         <ng-template #thenBlock2><h4><a href={{this.site}} target="_blank">Click Here For Alert Details</a></h4></ng-template>
         <ng-template #elseBlock2> </ng-template>
     </div>
-    <div class="row">
+    <div class="row" style="margin:auto;">
         <div class="column" style="background-color:#ddd;">
             <div class="card-header">
                 <h1>  {{this.weekday[1]}}<img style="height:100px; width: 100px;" src="/animated/{{this.forecast.daily.data[1].icon}}.svg"></h1>

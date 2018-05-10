@@ -117,6 +117,5 @@ require(["esri/map",
           map.graphics.add(graphicsArray[i]);
       }
   }
-  var l = document.getElementById("location");
-  alert(l);
+
 });

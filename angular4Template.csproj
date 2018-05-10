@@ -19,6 +19,10 @@
   <ItemGroup>
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
     <Content Remove="ClientApp\**" />
+    <Content Remove="wwwroot\DotNet\Web.config" />
+    <Content Remove="wwwroot\DotNet\proxy.ashx" />
+    <Content Remove="wwwroot\DotNet\proxy.config" />
+    <Content Remove="wwwroot\DotNet\proxy.xsd" />
   </ItemGroup>
 
   <ItemGroup>
