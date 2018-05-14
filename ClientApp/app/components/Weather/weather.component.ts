@@ -47,18 +47,22 @@ export class WeatherComponent {
         /** if(this.precipInten<2)
               this.stormInterval = 0;*/
         if((this.precipInten>=2)&&(this.precipInten<3))
-              this.stormInterval = 5;
-        if((this.precipInten>=3)&&(this.precipInten<4))
               this.stormInterval = 10;
+        if((this.precipInten>=3)&&(this.precipInten<4))
+              this.stormInterval = 25;
         if((this.precipInten>=4)&&(this.precipInten<6))
-              this.stormInterval = 20;
-        if((this.precipInten>=6)&&(this.precipInten<8))
               this.stormInterval = 50;
-        if(this.precipInten>=8)
+        if((this.precipInten>=6)&&(this.precipInten<8))
               this.stormInterval = 100;
+<<<<<<< HEAD
 
 
         this.stormInterval=500;
+=======
+        if(this.precipInten>=8)
+              this.stormInterval = 500;
+       
+>>>>>>> master
         if(typeof this.forecast.alerts === "undefined")             this.caption = "No Current Alerts";         else {             this.caption = this.forecast.alerts[0].title;
             this.site = this.forecast.alerts[0].uri;
         }
