@@ -1,4 +1,5 @@
 ﻿var l;
+var interval;
 function getAddr(id){
         
         l=document.getElementById("location").value=id;
@@ -8,8 +9,8 @@ function getAddr(id){
 }
 function getIntervalPlease(){
     interval=document.getElementById("interval").value;
-    //localStorage.setItem("interval", interval);
-    alert(interval);
+    localStorage.setItem("interval", interval);
+    //alert(interval);
 
 }
 
@@ -42,6 +43,7 @@ var barrierSymbol;
 */
 
         l = localStorage.getItem("l");
+        interval = localStorage.getItem("interval");
         var clear="";
          var point1 = new Point(-75.075793, 38.356461, new SpatialReference({ wkid: 4326 }));
          var point2 = new Point(-75.062644, 38.395349, new SpatialReference({ wkid: 4326 }));
@@ -65,8 +67,8 @@ var barrierSymbol;
 
         var featureLayer = new FeatureLayer("https://services1.arcgis.com/jjVcwHv9AQEq3DH3/arcgis/rest/services/Evacuation_Zones/FeatureServer/0");
         //map.addLayer(featureLayer);
-        var flood25 = new FeatureLayer("https://services1.arcgis.com/X3lKekbdaBmNjCHu/arcgis/rest/services/FloodLinesID_25/FeatureServer/0?token=ZeCHKKaguZ3_yMgxhOybxmov5cpSWnwLCIIIH_W2sSm80wkSWsDCbZmTelYFZ5RJDrjIGu45nWp_ay7ELU5f15jSwnH0pUSQ_ssr8oR2c4070_yjBkPQckDnPlMB0fQm9zAxj3_pXhnxmS6HsLjtPo05NY7EltNJcukHGpMD5QmQ3oJiLvcfGqkkmAwlvUYQL9LYfWcJttXJzqNJEXyC_2yu0qGWBY0wyVHTsfRPcRHbpCHEDSsrNN1ztZFb5vae");
-       // map.addLayer(flood25);
+        var flood10 = new FeatureLayer("https://services1.arcgis.com/X3lKekbdaBmNjCHu/arcgis/rest/services/flood10_danger/FeatureServer/0?token=OVDNTKAJhXH8QDp7W78e2wMkAO7EBiBdmVt1typYCyBCdAXFrRPGAwhqQNmRg_144Hx9Wei8n6bozFhwnDMLQRwKG5S2kgHG_MEYkEkM_pnlZkneQYK2oDyk3eiEL37en1xA5-XYjjTbHE5DNQXZHghYUbvHBdkFnavbdY2nJxVtWa89HFhSWW7JatmSN-N7kbYrFPpNAoD5rbME7jrQImqyrWlOrooPebokZI0nmx0eCS6RdEYN463QEdJ8FxnS");
+       
 
         var d = document.getElementById("dir");
 
@@ -90,6 +92,10 @@ var point = new Point(-75.062644, 38.395349);
     );
 
 */
+
+        if(interval==10){
+            map.addLayer(flood10);
+        }
 
         if(l=="2611 N Philadelphia Ave, Ocean City, MD 21842"){
             directions.addStop(point1, 1);
