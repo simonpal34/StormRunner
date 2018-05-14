@@ -23,6 +23,7 @@
     <Content Remove="wwwroot\DotNet\proxy.ashx" />
     <Content Remove="wwwroot\DotNet\proxy.config" />
     <Content Remove="wwwroot\DotNet\proxy.xsd" />
+    <Content Remove="wwwroot\interval.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +33,7 @@
   <ItemGroup>
     <None Include="wwwroot\iframeMap.html" />
     <None Include="wwwroot\map.js" />
+    <None Include="wwwroot\interval.js" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

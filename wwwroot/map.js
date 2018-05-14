@@ -6,8 +6,9 @@ function getAddr(id){
         location.href="http://localhost:5000/evac-map";
         //l=document.getElementById("location").value=id;
 }
-function getInterval(interval){
-    
+function getIntervalPlease(){
+    interval=document.getElementById("interval").value;
+    //localStorage.setItem("interval", interval);
     alert(interval);
 
 }
