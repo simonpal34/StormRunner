@@ -57,7 +57,7 @@ export class WeatherComponent {
 
 
 
-        this.stormInterval=10;
+        this.stormInterval=25;
 
         if(typeof this.forecast.alerts === "undefined")             this.caption = "No Current Alerts";         else {             this.caption = this.forecast.alerts[0].title;
             this.site = this.forecast.alerts[0].uri;
