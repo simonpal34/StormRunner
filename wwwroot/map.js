@@ -4,7 +4,7 @@ function getAddr(id){
         
         l=document.getElementById("location").value=id;
         localStorage.setItem("l", l);
-        location.href="http://localhost:5000/evac-map";
+        location.href ="http://localhost:54954/evac-map";
         //l=document.getElementById("location").value=id;
 }
 function getIntervalPlease(){
